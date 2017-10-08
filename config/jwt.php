@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'user' => 'App\Models\Frontend\Customers\Customer',
+    'user' => 'App\Models\Backend\Users\User',
 
     /*
     |--------------------------------------------------------------------------

@@ -18,10 +18,9 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, Content-Lengt
 
 Route::get('/users', ['middleware'=>['jwt.auth'], 'uses' => 'UsersController@index']);
 
-Route::post('/authenticate',[
-	'uses' => 'Frontend\Api\ApiAuthController@authenticate'
-	]);
+Route::post('/authenticate',['uses' => 'Backend\Api\ApiAuthController@authenticate']);
+Route::get('/getuser',['uses' => 'Backend\Api\ApiAuthController@getAuthUser']);
+Route::post('/logout',['uses' => 'Backend\Api\ApiAuthController@logout']);
 
-Route::post('/register',[
-	'uses' => 'Frontend\Api\ApiAuthController@register'
-	]);
+
+Route::post('/register',['uses' => 'Backend\Api\ApiAuthController@register']);
