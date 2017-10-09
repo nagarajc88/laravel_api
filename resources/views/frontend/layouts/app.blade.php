@@ -29,7 +29,7 @@
 <div class="container">
 <div class="row">
     <div class="offset6 span6 right-align loginArea">
-        <a href="#login" role="button" data-toggle="modal"><span class="btn btn-mini"> Login  </span></a> 
+        <a href="#login" id="logout" role="button" data-toggle="modal"><span class="btn btn-mini" id="loginout"> Login  </span></a> 
         <a href="register.php"><span class="btn btn-mini btn-success"> Register  </span></a> 
         <a href="checkout.php"><span class="btn btn-mini btn-danger"> Cart [2] </span></a> 
     </div>
@@ -42,7 +42,7 @@
     <h3>Sell Anythings : Login Block</h3>
   </div>
   <div class="modal-body">
-    <form class="form-horizontal loginFrm" action="api/authenticate" method="POST">
+    <form class="form-horizontal loginFrm">
       <div class="control-group">                               
         <input type="text" id="inputEmail" placeholder="Email">
       </div>
@@ -54,7 +54,7 @@
         <input type="checkbox"> Remember me
         </label>
       </div>
-     <button type="submit" class="btn btn-success">Sign in</button>
+     <button type="button" id="userlogin" class="btn btn-success">Sign in</button>
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     </form>
   </div>
@@ -239,7 +239,8 @@
       var popularproductlist_url_five = "<?php echo route('product-frontend-getPopularPorductsFive'); ?>";
       var popularproductlist_url_six = "<?php echo route('product-frontend-getPopularPorductsSix'); ?>";
     </script>
-
+   
+    <script src="frontend/controllers/header-ajax.js"></script>
     <script src="frontend/controllers/home-ajax.js"></script>
     <script src="frontend/themes/js/jquery-1.8.3.min.js"></script>
     <script src="frontend/bootstrap/js/bootstrap.min.js"></script>

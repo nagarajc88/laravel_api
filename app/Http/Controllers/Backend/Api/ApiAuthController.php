@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\Api;
 
+use App\Http\Controllers\Backend\Controller;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
-use App\models\Backend\Users\User;
+use App\Models\Backend\Users\User;
 class ApiAuthController extends Controller
 {
 
@@ -56,5 +57,21 @@ class ApiAuthController extends Controller
        $token = JWTAuth::fromUser($user);
 
        return response()->json(['token',$token],200);
+    }
+
+   public function getAuthUser()
+   {
+
+        $token = request()->token;
+        $user = JWTAuth::toUser($token);
+        return response()->json($user,200);
+    }
+
+
+    public function logout() {
+        $token = request()->token;
+        
+        return JWTAuth::invalidate($token);
+        
     }
 }
