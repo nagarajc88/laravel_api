@@ -69,10 +69,9 @@ class ApiAuthController extends Controller
 
 
     public function logout() {
-        // $token = request()->token;
 
-        // return JWTAuth::invalidate($token);
-        return "hi";
-
+        $token = request()->token;
+        
+        return JWTAuth::invalidate($token);
     }
 }

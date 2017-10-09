@@ -29,7 +29,7 @@
 <div class="container">
 <div class="row">
     <div class="offset6 span6 right-align loginArea">
-        <a id="logout" href="#login" role="button" data-toggle="modal"><span id="loginout" class="btn btn-mini"> Login  </span></a> 
+        <a href="#login" id="logout" role="button" data-toggle="modal"><span class="btn btn-mini" id="loginout"> Login  </span></a> 
         <a href="register.php"><span class="btn btn-mini btn-success"> Register  </span></a> 
         <a href="checkout.php"><span class="btn btn-mini btn-danger"> Cart [2] </span></a> 
     </div>
@@ -54,8 +54,9 @@
         <input type="checkbox"> Remember me
         </label>
       </div>
-     <button type="button"  id="userlogin" class="btn btn-success">Sign in</button>
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+
+     <button type="button" id="userlogin" class="btn btn-success">Sign in</button>
+     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     </form>
   </div>
 </div>
