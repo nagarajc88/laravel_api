@@ -29,8 +29,12 @@ Route::get('product-frontend-getPopularPorductsThree', 'Frontend\Home\HomeContro
 Route::get('product-frontend-getPopularPorductsFour', 'Frontend\Home\HomeController@getPopularPorductsFour')->name('product-frontend-getPopularPorductsFour');
 Route::get('product-frontend-getPopularPorductsFive', 'Frontend\Home\HomeController@getPopularPorductsFive')->name('product-frontend-getPopularPorductsFive');
 Route::get('product-frontend-getPopularPorductsSix', 'Frontend\Home\HomeController@getPopularPorductsSix')->name('product-frontend-getPopularPorductsSix');
+//*********end**********
 
-
+//Frontend Details routes****
+Route::get('/product-details', 'Frontend\Details\DetailsController@manageDetails');
+//Frontend Checkout routes****
+Route::get('/product-checkout', 'Frontend\Checkout\CheckoutController@manageCheckout');
 
 //All backend routes******
 

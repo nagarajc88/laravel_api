@@ -16,7 +16,7 @@ class ApiAuthController extends Controller
         // Apply the jwt.auth middleware to all methods in this controller
         // except for the authenticate method. We don't want to prevent
         // the user from retrieving their token if they don't already have it
-        $this->middleware('jwt.auth', ['except' => ['authenticate']]);
+    $this->middleware('jwt.auth', ['except' => ['authenticate']]);
         // $this->middleware('cors');
 
     }
@@ -38,8 +38,8 @@ class ApiAuthController extends Controller
     		return response()->json(['error' => 'Something_went_wrong'],500);
 
     	}
-
-    	return response()->json(['token' => $token],200);
+        $user = JWTAuth::toUser($token);
+    	return response()->json(['token' => $token,'user'=> $user],200);
     }
 
     public function register()

@@ -1,6 +1,5 @@
  $(document).ready(function(){
   var sessionUsername = sessionStorage.getItem('username');
-  // alert(sessionUsername);
   if(sessionUsername!=null){
   	    $("#logout"). removeAttr("href");
 		$("#loginout").text('Logout'); 
@@ -54,6 +53,8 @@ $(document).on("click","#logout",function() {
  //    	url: 'api/logout',
  //    	data: { token:"Basic " + sessionToken }
 	// }).done(function(data){ 
+	//   sessionStorage.removeItem('token');
+ //      sessionStorage.removeItem('username');	
 	//   $("#logout").attr("href","#login");	
  //      $("#loginout").text('Login');
  //    });

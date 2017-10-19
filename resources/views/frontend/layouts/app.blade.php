@@ -8,6 +8,7 @@
     <meta name="author" content="">
 <!-- styles -->
     <link rel="stylesheet/less" type="text/css" href="frontend/themes/less/bootstrap.less">
+    <link rel="stylesheet/less" type="text/css" href="frontend/themes/less/style.less">
     <script src="frontend/themes/js/less/less.js" type="text/javascript"></script>
 
     <!-- favicon-icons -->
@@ -31,10 +32,9 @@
     <div class="offset6 span6 right-align loginArea">
         <a href="#login" id="logout" role="button" data-toggle="modal"><span class="btn btn-mini" id="loginout"> Login  </span></a> 
         <a href="register.php"><span class="btn btn-mini btn-success"> Register  </span></a> 
-        <a href="checkout.php"><span class="btn btn-mini btn-danger"> Cart [2] </span></a> 
+        <!-- <a href="#" id="cart"><span class="btn btn-mini btn-danger"> Cart [3] </span></a>  -->
     </div>
 </div>
-
 <!-- Login Block -->
 <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
   <div class="modal-header">
@@ -81,7 +81,59 @@
             <button type="submit" class="btn btn-warning btn-large" style="margin-top:0"> GO </button>
         </form>
         </li>
+        <li class="dropdown">
+          <button style="margin-top:10px; margin-left:20px; " class="btn btn-danger btn-large dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span>Cart [3] <span class="caret"></span></button> 
+
+          <ul class="dropdown-menu dropdown-cart" role="menu" style="width: 325px;">
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+              </li>
+              <hr>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+              </li>
+              <hr>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+              </li>
+              <hr>
+              <a href="/product-checkout" class="btn btn-xs btn-primary pull-right">Checkout</a>
+          </li>
         </ul>
+
     </div>
     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
@@ -93,9 +145,9 @@
  </div>
 </header>
 <div class="container">
-<section id="mainCarousel">
-    <div class="displayStyle">
-    <div id="myCarousel" class="carousel slide">
+      <section id="mainCarousel">
+        <div class="displayStyle">
+        <div id="myCarousel" class="carousel slide">
         <span class="newTag tagRight"></span>
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -203,7 +255,7 @@
        </div>
      </section>
        @yield('content')
-    </div>
+  </div>
     <!-- Footer
     ================================================== -->
     <footer class="footer">
@@ -239,7 +291,7 @@
       var popularproductlist_url_five = "<?php echo route('product-frontend-getPopularPorductsFive'); ?>";
       var popularproductlist_url_six = "<?php echo route('product-frontend-getPopularPorductsSix'); ?>";
     </script>
-   
+    <script src="frontend/controllers/cart-ajax.js"></script>
     <script src="frontend/controllers/header-ajax.js"></script>
     <script src="frontend/controllers/home-ajax.js"></script>
     <script src="frontend/themes/js/jquery-1.8.3.min.js"></script>
