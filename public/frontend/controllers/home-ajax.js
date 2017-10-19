@@ -22,6 +22,7 @@ function manageNewProductsOne(data){
 	$.each( data, function( key, value ) {
 		rows = rows + '<div class="span3">';
 		rows = rows + '<div class="well well-small">';
+        rows = rows + '<form for="product-list">';
 	  	rows = rows + '<span class="newTag"></span>';
         rows = rows + '<span class="priceTag">';
         rows = rows + '<small class="oldPrice"><small>$</small>440.00</small>';
@@ -30,10 +31,11 @@ function manageNewProductsOne(data){
         rows = rows + '<a class="displayStyle" href="#"><img src="frontend/themes/images/clothes/1.jpg" alt="#"/></a>';
         rows = rows + '<h5>Clothings</h5>';
         rows = rows + '<p>';
-        rows = rows + '<a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a>'; 
-        rows = rows + '<a class="btn" href="details.php">view details</a>';
+        // rows = rows + '<button class="btn btn-warning add-to-cart"> Add to <i class="icon-shopping-cart"></i></button>'; 
+        rows = rows + '<a class="btn" href="/product-details">view details</a>';
         rows = rows + '</p>';
-        rows = rows + '<p><span class="price"><small>$</small>400.00</span></p>'
+        rows = rows + '<p><span class="price"><small>$</small>400.00</span></p>';
+        rows = rows + '</form>';
         rows = rows + '</div>';
         rows = rows + '</div>';
 	});
@@ -57,6 +59,7 @@ function manageNewProductsTwo(data){
     $.each( data, function( key, value ) {
         rows = rows + '<div class="span3">';
         rows = rows + '<div class="well well-small">';
+        rows = rows + '<form for="product-list">';
         rows = rows + '<span class="newTag"></span>';
         rows = rows + '<span class="priceTag">';
         rows = rows + '<small class="oldPrice"><small>$</small>440.00</small>';
@@ -65,10 +68,11 @@ function manageNewProductsTwo(data){
         rows = rows + '<a class="displayStyle" href="#"><img src="frontend/themes/images/clothes/1.jpg" alt="#"/></a>';
         rows = rows + '<h5>Clothings</h5>';
         rows = rows + '<p>';
-        rows = rows + '<a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a>'; 
-        rows = rows + '<a class="btn" href="details.php">view details</a>';
+        // rows = rows + '<button class="btn btn-warning add-to-cart"> Add to <i class="icon-shopping-cart"></i></button>'; 
+        rows = rows + '<a class="btn" href="/product-details">view details</a>';
         rows = rows + '</p>';
-        rows = rows + '<p><span class="price"><small>$</small>400.00</span></p>'
+        rows = rows + '<p><span class="price"><small>$</small>400.00</span></p>';
+        rows = rows + '</form>';
         rows = rows + '</div>';
         rows = rows + '</div>';
     });
@@ -93,6 +97,7 @@ function manageNewProductsThree(data){
     $.each( data, function( key, value ) {
         rows = rows + '<div class="span3">';
         rows = rows + '<div class="well well-small">';
+        rows = rows + '<form for="product-list">';
         rows = rows + '<span class="newTag"></span>';
         rows = rows + '<span class="priceTag">';
         rows = rows + '<small class="oldPrice"><small>$</small>440.00</small>';
@@ -101,10 +106,11 @@ function manageNewProductsThree(data){
         rows = rows + '<a class="displayStyle" href="#"><img src="frontend/themes/images/clothes/1.jpg" alt="#"/></a>';
         rows = rows + '<h5>Clothings</h5>';
         rows = rows + '<p>';
-        rows = rows + '<a class="btn btn-warning" href="#" > Add to <i class="icon-shopping-cart"></i></a>'; 
-        rows = rows + '<a class="btn" href="details.php">view details</a>';
+        // rows = rows + '<button class="btn btn-warning add-to-cart"> Add to <i class="icon-shopping-cart"></i></button>';  
+        rows = rows + '<a class="btn" href="/product-details">view details</a>';
         rows = rows + '</p>';
-        rows = rows + '<p><span class="price"><small>$</small>400.00</span></p>'
+        rows = rows + '<p><span class="price"><small>$</small>400.00</span></p>';
+        rows = rows + '</form>';
         rows = rows + '</div>';
         rows = rows + '</div>';
     });
@@ -144,7 +150,7 @@ function managePopularProductsOne(data){
         }else{
         rows = rows + '<div class="item">';   
         }
-        rows = rows + '<a  href="details.php" ><img src="frontend/themes/images/clothes/sma1.jpg" alt="#"/>';
+        rows = rows + '<a  href="/product-details" ><img src="frontend/themes/images/clothes/sma1.jpg" alt="#"/>';
         rows = rows + 'View Details</a>';
         rows = rows + '</div>';
         i++;
@@ -172,7 +178,7 @@ function managePopularProductsTwo(data){
         }else{
         rows = rows + '<div class="item">';   
         }
-        rows = rows + '<a  href="details.php" ><img src="frontend/themes/images/clothes/sma6.jpg" alt="#"/>';
+        rows = rows + '<a  href="/product-details" ><img src="frontend/themes/images/clothes/sma6.jpg" alt="#"/>';
         rows = rows + 'View Details</a>';
         rows = rows + '</div>';
         i++;
@@ -200,7 +206,7 @@ function managePopularProductsThree(data){
         }else{
         rows = rows + '<div class="item">';   
         }
-        rows = rows + '<a  href="details.php" ><img src="frontend/themes/images/clothes/sma5.jpg" alt="#"/>';
+        rows = rows + '<a  href="/product-details" ><img src="frontend/themes/images/clothes/sma5.jpg" alt="#"/>';
         rows = rows + 'View Details</a>';
         rows = rows + '</div>';
         i++;
@@ -228,7 +234,7 @@ function managePopularProductsFour(data){
         }else{
         rows = rows + '<div class="item">';   
         }
-        rows = rows + '<a  href="details.php" ><img src="frontend/themes/images/clothes/sma4.jpg" alt="#"/>';
+        rows = rows + '<a  href="/product-details" ><img src="frontend/themes/images/clothes/sma4.jpg" alt="#"/>';
         rows = rows + 'View Details</a>';
         rows = rows + '</div>';
         i++;
@@ -256,7 +262,7 @@ function managePopularProductsFive(data){
         }else{
         rows = rows + '<div class="item">';   
         }
-        rows = rows + '<a  href="details.php" ><img src="frontend/themes/images/clothes/sma3.jpg" alt="#"/>';
+        rows = rows + '<a  href="/product-details" ><img src="frontend/themes/images/clothes/sma3.jpg" alt="#"/>';
         rows = rows + 'View Details</a>';
         rows = rows + '</div>';
         i++;
@@ -283,7 +289,7 @@ function managePopularProductsSix(data){
         }else{
         rows = rows + '<div class="item">';   
         }
-        rows = rows + '<a  href="details.php" ><img src="frontend/themes/images/clothes/sma2.jpg" alt="#"/>';
+        rows = rows + '<a  href="/product-details" ><img src="frontend/themes/images/clothes/sma2.jpg" alt="#"/>';
         rows = rows + 'View Details</a>';
         rows = rows + '</div>';
         i++;
