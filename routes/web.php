@@ -32,7 +32,7 @@ Route::get('product-frontend-getPopularPorductsSix', 'Frontend\Home\HomeControll
 //*********end**********
 
 //Frontend Details routes****
-Route::get('/product-details', 'Frontend\Details\DetailsController@manageDetails');
+Route::get('/view-product', 'Frontend\Details\DetailsController@manageDetails');
 //Frontend Checkout routes****
 Route::get('/product-checkout', 'Frontend\Checkout\CheckoutController@manageCheckout');
 
