@@ -32,6 +32,7 @@ Route::get('/popular3-product-list',['uses' => 'Frontend\Home\HomeController@get
 Route::get('/popular4-product-list',['uses' => 'Frontend\Home\HomeController@getPopularPorductsFour']);
 Route::get('/popular5-product-list',['uses' => 'Frontend\Home\HomeController@getPopularPorductsFive']);
 Route::get('/popular6-product-list',['uses' => 'Frontend\Home\HomeController@getPopularPorductsSix']);
+Route::get('/master-category',['uses' => 'Frontend\Categories\CategoryController@index']);
 
 Route::post('/product-details',['uses' => 'Frontend\Details\DetailsController@product_details']);
 Route::post('/register',['uses' => 'Backend\Api\ApiAuthController@register']);
