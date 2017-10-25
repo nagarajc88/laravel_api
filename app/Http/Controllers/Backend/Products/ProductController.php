@@ -10,6 +10,7 @@ use App\Models\Backend\Products\Product_image;
 use App\Models\Backend\Products\Product_category;
 use App\Models\Backend\Products\Product_custom_option;
 use App\Repo\SubCate;
+use File;
 class ProductController extends Controller
 {
 
@@ -66,7 +67,8 @@ class ProductController extends Controller
             ]
          );
          
-         print_r($request->product_categories);exit;
+         print_r($request->all());exit;
+
         $product = Product::create([
               'product_name' => $request->product_name,
               'slug' => $request->product_name
@@ -100,5 +102,38 @@ class ProductController extends Controller
         return response()->json(['done']);
 
     }
+
+    public function productImageUpload(Request $request,$id=0){
+        $image = $request->file('file');
+        $imageName = time().$image->getClientOriginalName();
+        $imgName['file'] = $imageName;
+        if (! File::exists(public_path()."/backend/images/temp/".$id)) {
+            File::makeDirectory(public_path()."/backend/images/temp/".$id,0777,true);
+        }
+        if (! File::exists(public_path()."/backend/images/products/".$id)) {
+            File::makeDirectory(public_path()."/backend/images/products/".$id,0777,true);
+        }
+        $image->move(public_path('backend/images/temp/'.$id),$imageName);
+        $oldfile = public_path().'/backend/images/temp/'.$id.'/'.$imageName;
+        $newfile = public_path().'/backend/images/products/'.$id.'/'.$imageName;
+        File::move($oldfile, $newfile);
+        return response()->json($imgName);
+    }
+
+
+    public function removeProductImage(Request $request){
+      $imageName = $request->input('file');
+      $id = $request->input('id');
+      
+      $path = public_path().'/backend/images/products/'.$id.'/'.$imageName;
+      print_r($path); exit;
+      if(file_exists($path)) {
+          unlink($path);
+          echo 1;
+      }else{
+        echo 0;
+      }
+      // return response()->json(['sucess'=>"file deleted successfully"]);
+    } 
 
 }

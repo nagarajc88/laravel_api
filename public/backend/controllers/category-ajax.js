@@ -133,7 +133,7 @@ function categoryManageRow(data) {
 	 rows = rows + '<div id="MainMenu">';
 	 rows = rows + '<div class="list-group panel">';
 	 $.each( data, function(key, value ) {
-	 rows = rows + '<a href="#demo'+key+'" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">'+value.name+'<div id="cdelete" class="btn btn-danger" style="float:right;margin-left:4px;">Delete</div><div id="edit" class="edit btn btn-warning" nag="'+value.id+'" style="float:right;margin-right:4px;">Edit</div></a>';
+	 rows = rows + '<a href="#demo'+key+'" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">'+value.name+'<div id="cdelete" class="btn btn-danger" style="float:right;margin-left:4px;">Delete</div><div id="edit" class="edit btn btn-warning" nag="'+value.id+'" style="float:right;margin-right:4px;">Edit</div></a>';
 	 rows = rows + '<div class="collapse" id="demo'+key+'">';
 	 $.each(value.subCategory, function(skey, subValue ) {
 	 rows = rows + '<a href="#SubMenu'+skey+'" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">'+subValue.name+'<div id="cdelete" class="btn btn-danger" style="float:right;margin-left:4px;">Delete</div><div id="edit" class="btn btn-warning" nag="'+subValue.id+'" style="float:right;margin-right:4px;">Edit</div></a>';
@@ -171,7 +171,7 @@ function manageSelection(data){
 	 var rows = '';
 	 rows = rows + '<option value="0">Top Leave Category</option>'; 
 	 $.each( data, function(key, value ) {
-	 rows = rows + '<option value="'+value.id+'" href="#demo'+key+'" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">'+value.name+'</option>';
+	 rows = rows + '<option value="'+value.id+'" href="#demo'+key+'" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">'+value.name+'</option>';
 	 $.each(value.subCategory, function(skey, subValue ) {
 	 rows = rows + '<option value="'+subValue.id+'" href="#SubMenu'+skey+'" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">&nbsp;'+subValue.name+'</option>';
 	 $.each(subValue.subCategory, function(sSkey, secondSubValue ) {
