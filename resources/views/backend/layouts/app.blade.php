@@ -633,7 +633,6 @@
     <!-- Slimscroll Plugin Js -->
     <script src="backend/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="backend/plugins/multi-select/js/jquery.multi-select.js"></script>
-    <script src="backend/plugins/dropzone/dropzone.js"></script>
     <!-- Waves Effect Plugin Js -->
     <script src="backend/plugins/node-waves/waves.js"></script>
 
@@ -679,10 +678,8 @@
 
     <script src="backend/controllers/category-ajax.js"></script> 
     <script src="backend/controllers/product-ajax.js"></script>
-
     <script src="backend/controllers/backend/tinymce-editor.js" type="text/javascript"></script>
-        <script src="backend/controllers/tinymce_jquery/js/tinymce/tinymce.min.js" type="text/javascript"></script>
-        
+    <script src="backend/controllers/tinymce_jquery/js/tinymce/tinymce.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         tinyMCE.init({
                 mode : "textareas",
@@ -695,22 +692,44 @@
    <script type="text/javascript">
       $('#optgroup').multiSelect();
   </script>
-  <script type="text/javascript">
 
-    $(document).ready(function(){
-        Dropzone.autoDiscover = false;
-             $("#frmFileUpload").dropzone({ 
-                paramName: 'file',
-                url: "http://localhost/www/Sources/dzpost.php",
-                clickable: true,
-                enqueueForUpload: true,
-                parallelUploads: 1,
-                maxFilesize: 5,
-                acceptedMimeTypes: 'image/jpeg',
-                dictDefaultMessage: 'Drag your images here'
-            });
+  <script src="backend/plugins/dropzone/dropzone.js"></script>
+    <script>  
+          /*      DROPZONE    */
+           var newname = {};
+           var id = 0;
+           Dropzone.autoDiscover = false;
+           var myDropzone = new Dropzone("#my-dropzone", {
+            url: "/product-imageUpload",
+            acceptedFiles: "image/*, .pdf, .doc, .docx",
+            addRemoveLinks: true,
+            headers:{
+                        'X-CSRF-Token': $('input[name="_token"]').val()
+                    },
+            success: function(file,res){
+                //console.log(res.file);
+                add_image(res.file);// image
+            },
+            removedfile: function(file) {
+                var name = file.name;
+                $.ajax({
+                    type: "post",
+                    url: "remove-product-image",
+                    data: { file: name,id:id },
+                    dataType: 'json'
+                });
+
+                // remove the thumbnail
+                var previewElement;
+                return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+            }
         });
-  </script>
+
+        /*      // DROPZONE    */
+        function add_image(file){
+            $('#panel7').append('<input type="hidden" value ="'+file+'" name="product_image[]" id="product_image">');
+        }
+    </script>
 </body>
 
 </html>

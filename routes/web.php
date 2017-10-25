@@ -95,3 +95,5 @@ Route::get('product', 'Backend\Products\ProductController@manageCategoryAjax');
 Route::get('product-add', 'Backend\Products\ProductController@add');
 Route::get('product-edit', 'Backend\Products\ProductController@edit');
 Route::get('product-dropdown','Backend\Products\ProductController@dropdownCategories');
+Route::post('product-imageUpload','Backend\Products\ProductController@productImageUpload');
+Route::post('remove-product-image','Backend\Products\ProductController@removeProductImage');

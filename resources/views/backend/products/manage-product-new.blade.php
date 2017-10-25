@@ -97,29 +97,18 @@
 	            <!-- #END# Multi Select -->
 	    </div>
 	    <!--/.Panel 2-->
+	    
 	    <!--Panel 3-->
 	    <div class="tab-pane fade" id="panel7" role="tabpanel">
 	        <!-- File Upload | Drag & Drop OR With Click & Choose -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="body">
-                            <form action="/" id="frmFileUpload" class="dropzone" method="post" enctype="multipart/form-data">
-                                <div class="dz-message">
-                                    <div class="drag-icon-cph">
-                                        <i class="material-icons">touch_app</i>
-                                    </div>
-                                    <h3>Drop files here or click to upload.</h3>
-                                    <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
-                                </div>
-                                <div class="fallback">
-                                    <input id="product_image" name="product_image" type="file" multiple />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+           <div id="my-dropzone" class="dropzone">
+                <div class="dz-message">
+                    <h3>Drag & Drop files here</h3>
+                    <h4>or <strong>click</strong> to upload </h4>
+                    <span>.jpg .png .pdf .doc and .docx only</span>
                 </div>
             </div>
+            <!-- <input type="hidden" name="product_image[]" id="product_image"> -->
             <!-- #END# File Upload | Drag & Drop OR With Click & Choose -->
 	    </div>
 	    <!--/.Panel 3-->

@@ -27,6 +27,7 @@ class CategoryController extends Controller
    public function edit(){
        return view('backend.categories.manage-category-edit');
    }
+   
     public function index(Request $request)
     {
         $subcate=new SubCate;
